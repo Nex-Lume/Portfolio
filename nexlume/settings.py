@@ -25,10 +25,14 @@ SECRET_KEY = 'django-insecure-+q-u!xyz-%%&#5t-56)lcfpv=bw1!1ol&wck$2=+3e@pn0uyn_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["web-production-8f65.up.railway.app", "127.0.0.1", "localhost"]
+ALLOWED_HOSTS = [
+    "web-production-8f65.up.railway.app",
+    "127.0.0.1",
+    "localhost"
+]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://web-production-8f65.up.railway.app/",  # Add your deployed domain here
+    "https://web-production-8f65.up.railway.app",  # No trailing slash
 ]
 
 
@@ -60,6 +64,9 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',  # Add this line
 
 ]
+
+MIDDLEWARE.remove('django.middleware.csrf.CsrfViewMiddleware')
+
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 

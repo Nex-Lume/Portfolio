@@ -27,6 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://nexlume.up.railway.app",  # Add your deployed domain here
+]
+
+
 
 # settings.py
 TIME_ZONE = 'Asia/Kolkata'  # Set timezone to IST

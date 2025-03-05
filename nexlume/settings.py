@@ -23,14 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-+q-u!xyz-%%&#5t-56)lcfpv=bw1!1ol&wck$2=+3e@pn0uyn_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
-CSRF_TRUSTED_ORIGINS = [
-    "https://nexlume.up.railway.app",  # Add your deployed domain here
-]
-
 
 
 # settings.py

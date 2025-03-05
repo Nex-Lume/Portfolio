@@ -53,7 +53,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Add this line
+
 ]
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 
 ROOT_URLCONF = 'nexlume.urls'
 
@@ -121,14 +126,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
-# Directory to collect all static files when running `collectstatic`
+# Directory where `collectstatic` will collect files for deployment
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# Add paths to locate static files within your apps
+# Tells Django where to find static files in development
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'website/static'),
+    os.path.join(BASE_DIR, 'website', 'static'),  # Your static files are inside `website/static/`
 ]
 
 

@@ -127,15 +127,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
-# Directory where `collectstatic` will collect files for deployment
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# Tells Django where to find static files in development
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'website', 'static'),  # Your static files are inside `website/static/`
-]
-
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 # settings.py
 
